@@ -13,6 +13,7 @@ const TaskItem = ({ task, index, onDelete, onToggle }) => (
     className={`flex flex-row justify-between items-center gap-3 border border-gray400 rounded-md p-4
        bg-gray500 mx-w-[736px] w-full min-h-[72px] h-full`}
   >
+    {/* checkbox container */}
     <div className="flex items-start justify-center h-[24px] w-[24px]">
       <Checkbox
         checked={task.completed}
@@ -23,22 +24,28 @@ const TaskItem = ({ task, index, onDelete, onToggle }) => (
       />
     </div>
 
+    {/* textTasks */}
     <p
-      className={`text-[14px] text-left font-light text-white mx-w-[632px] h-[40px] leading-4 
-        ${task.completed ? 'line-through text-white/40' : ''}`}
+      className={`text-[14px] text-left font-light text-white mx-w-[632px] h-[40px] 
+        leading-4 ${task.completed ? 'line-through text-white/40' : ''}`}
     >
       {task.text}
     </p>
 
+    {/* trash button */}
     <div className="flex items-start justify-center h-[24px] w-[24px]">
-      <button onClick={() => onDelete(index)} aria-label="Delete task">
+      <button
+        type="button"
+        onClick={() => onDelete(index)}
+        aria-label="Delete task"
+      >
         <FaTrashAlt className="text-gray300" />
       </button>
     </div>
   </div>
 );
 
-export const Tasks = ({ tasks = [], onDelete, onToggle }) => {
+export const TasksList = ({ tasks = [], onDelete, onToggle }) => {
   return (
     <section className="max-w-[750px] w-full border-t border-gray400 rounded-md p-5">
       {/* tasks empty */}
@@ -58,6 +65,7 @@ export const Tasks = ({ tasks = [], onDelete, onToggle }) => {
           </p>
         </div>
       ) : (
+        // createdTasks
         <ul className="flex flex-col gap-3 items-center justify-start w-full">
           {tasks.map((task, index) => (
             <li key={index}>
