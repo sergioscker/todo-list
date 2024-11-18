@@ -1,35 +1,75 @@
 'use client';
 
-import { List } from './List';
+import Image from 'next/image';
 
-export const Tasks = () => {
-  return (
-    <div className="w-full h-auto">
-      <div className="flex items-center justify-between w-[750px] gap-[40px] mx-auto py-5">
-        <p className="flex gap-2 items-center justify-center text-blue text-[14px] text-left font-bold">
-          Tasks created
-          <span
-            className="flex items-center justify-cente bg-gray400 text-white 
-          rounded-full p-2 w-[25px] h-[20px]"
-          >
-            0
-          </span>
-        </p>
+// icon
+import { FaTrashAlt } from 'react-icons/fa';
 
-        <p className="flex gap-2 items-center justify-center text-purple text-[14px] text-left font-bold">
-          Completed
-          <span
-            className="flex items-center justify-cente bg-gray400 text-white 
-          rounded-full p-2 w-[25px] h-[20px]"
-          >
-            0
-          </span>
-        </p>
-      </div>
+// component
+import { Checkbox } from './ui/checkbox';
 
-      <div className="flex items-center justify-center p-5 w-full">
-        <List />
-      </div>
+const TaskItem = ({ task, index, onDelete, onToggle }) => (
+  <div
+    className={`flex flex-row justify-between items-center gap-3 border border-gray400 rounded-md p-4
+       bg-gray500 mx-w-[736px] w-full min-h-[72px] h-full`}
+  >
+    <div className="flex items-start justify-center h-[24px] w-[24px]">
+      <Checkbox
+        checked={task.completed}
+        onClick={() => onToggle(index)}
+        className={`border border-blue rounded-full ${
+          task.completed ? 'border-none' : ''
+        }`}
+      />
     </div>
+
+    <p
+      className={`text-[14px] text-left font-light text-white mx-w-[632px] h-[40px] leading-4 
+        ${task.completed ? 'line-through text-white/40' : ''}`}
+    >
+      {task.text}
+    </p>
+
+    <div className="flex items-start justify-center h-[24px] w-[24px]">
+      <button onClick={() => onDelete(index)} aria-label="Delete task">
+        <FaTrashAlt className="text-gray300" />
+      </button>
+    </div>
+  </div>
+);
+
+export const Tasks = ({ tasks = [], onDelete, onToggle }) => {
+  return (
+    <section className="max-w-[750px] w-full border-t border-gray400 rounded-md">
+      {tasks.length === 0 ? (
+        <div className="flex flex-col gap-4 justify-center items-center py-[64px] px-6">
+          <Image
+            src="/assets/clipboard.svg"
+            alt="file-logo"
+            width={56}
+            height={56}
+          />
+          <p className="flex flex-col text-[16px] font-bold text-gray300">
+            You do not have any registered tasks yet.
+            <span className="text-[16px] font-medium text-gray300">
+              Create tasks and organize your to-do items
+            </span>
+          </p>
+        </div>
+      ) : (
+        <ul className="flex flex-col gap-3 items-center justify-start w-full">
+          {tasks.map((task, index) => (
+            <li key={index}>
+              <TaskItem
+                task={task}
+                index={index}
+                onDelete={onDelete}
+                onToggle={onToggle}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
   );
 };

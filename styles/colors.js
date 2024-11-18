@@ -1,4 +1,3 @@
-// ./styles/colors.js
 module.exports = {
   primary: '#1a1a1a',
   blue: '#4ea8de',

@@ -1,4 +1,3 @@
-import Header from '@/components/Header';
 import './globals.css';
 
 import { Inter } from 'next/font/google';
@@ -22,9 +21,9 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: 'http://localhost:3000/assets/rocket.svg',
-        width: 800,
-        height: 600,
+        url: 'https://todo-list-tasks-two.vercel.app/assets/rocket.svg',
+        width: 22,
+        height: 36,
         alt: 'rocket-logo',
       },
     ],
@@ -34,10 +33,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
-        <Header />
-        {children}
-      </body>
+      <body className={`${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }
