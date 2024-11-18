@@ -40,7 +40,8 @@ const TaskItem = ({ task, index, onDelete, onToggle }) => (
 
 export const Tasks = ({ tasks = [], onDelete, onToggle }) => {
   return (
-    <section className="max-w-[750px] w-full border-t border-gray400 rounded-md">
+    <section className="max-w-[750px] w-full border-t border-gray400 rounded-md p-5">
+      {/* tasks empty */}
       {tasks.length === 0 ? (
         <div className="flex flex-col gap-4 justify-center items-center py-[64px] px-6">
           <Image
