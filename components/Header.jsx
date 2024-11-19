@@ -12,6 +12,7 @@ function Header({ tasks }) {
           quality={100}
           width={22}
           height={36}
+          draggable={false}
           className="flex items-center justify-center"
         />
 

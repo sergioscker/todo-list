@@ -14,7 +14,7 @@ const TaskItem = ({ task, index, onDelete, onToggle }) => (
        bg-gray500 mx-w-[736px] w-full min-h-[72px] h-full`}
   >
     {/* checkbox container */}
-    <div className="flex items-start justify-center h-[24px] w-[24px]">
+    <div className="flex items-start justify-center h-[24px] w-[24px] ">
       <Checkbox
         checked={task.completed}
         onClick={() => onToggle(index)}
@@ -26,14 +26,16 @@ const TaskItem = ({ task, index, onDelete, onToggle }) => (
 
     {/* textTasks */}
     <p
-      className={`text-[14px] text-left font-light text-white mx-w-[632px] h-[40px] 
-        leading-4 ${task.completed ? 'line-through text-white/40' : ''}`}
+      className={`flex items-center justify-center text-[14px] text-left font-light text-white 
+        mx-w-[632px] h-[42px] leading-4 ${
+          task.completed ? 'line-through text-white/40' : ''
+        }`}
     >
       {task.text}
     </p>
 
     {/* trash button */}
-    <div className="flex items-start justify-center h-[24px] w-[24px]">
+    <div className="flex items-start justify-center min-h-[24px] mx-w-[24px]">
       <button
         type="button"
         onClick={() => onDelete(index)}
@@ -47,7 +49,11 @@ const TaskItem = ({ task, index, onDelete, onToggle }) => (
 
 export const TasksList = ({ tasks = [], onDelete, onToggle }) => {
   return (
-    <section className="max-w-[750px] w-full border-t border-gray400 rounded-md p-5">
+    <section
+      className={`max-w-[750px] w-full  border-gray400 rounded-md p-5 ${
+        tasks.length > 0 ? 'border-none' : 'border-t'
+      } `}
+    >
       {/* tasks empty */}
       {tasks.length === 0 ? (
         <div className="flex flex-col gap-4 justify-center items-center py-[64px] px-6">

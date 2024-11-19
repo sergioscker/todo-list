@@ -27,18 +27,18 @@ export default function Home() {
     <main className="w-full h-auto">
       <Header tasks={tasks} />
       {/* input and button */}
-      <div className="flex justify-center items-center gap-5 p-4">
+      <div className="flex justify-center items-center gap-5 p-5 w-full">
         <Input
           type="text"
           value={newTask}
           onChange={(data) => setNewTask(data.target.value)}
-          className="p-4"
+          className="text-[16px]"
           placeholder="Add a new task"
         />
         <Button
           onClick={handleAddTasks}
           type="buttom"
-          className="bg-bluedark p-4"
+          className="bg-bluedark text-[14px] p-3"
         >
           Create <GrAddCircle />
         </Button>
@@ -57,7 +57,7 @@ export default function Home() {
             Tasks created
             <span
               className="flex items-center justify-center bg-gray400 text-white text-[12px]
-        rounded-full p-2 w-[25px] h-[20px]"
+        rounded-full p-3 w-[25px] h-[20px]"
             >
               {tasks.length}
             </span>
@@ -70,7 +70,7 @@ export default function Home() {
             Completed
             <span
               className="flex items-center justify-center bg-gray400 text-white text-center 
-            text-[12px] w-[52px] h-[20px] rounded-full p-2"
+            text-[12px] mx-w-full h-[20px] rounded-full p-3"
             >
               {tasks.filter((task) => task.completed).length} of {tasks.length}
             </span>
