@@ -8,7 +8,7 @@ import { GrAddCircle } from 'react-icons/gr';
 // componets
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { TasksList } from '@/components/Tasks';
+import { TasksList } from '@/components/TasksList';
 import Header from '@/components/Header';
 
 // hook
@@ -22,12 +22,14 @@ export default function Home() {
     addTask(newTask);
     setNewTask('');
   };
-
   return (
     <main className="w-full h-auto">
       <Header tasks={tasks} />
-      {/* input and button */}
-      <div className="flex justify-center items-center gap-5 p-5 w-full">
+      {/* form */}
+      <form
+        onSubmit={handleAddTasks}
+        className="flex justify-center items-center gap-5 p-5 w-full"
+      >
         <Input
           type="text"
           value={newTask}
@@ -35,14 +37,10 @@ export default function Home() {
           className="text-[16px]"
           placeholder="Add a new task"
         />
-        <Button
-          onClick={handleAddTasks}
-          type="buttom"
-          className="bg-bluedark text-[14px] p-3"
-        >
+        <Button type="submit" className="bg-bluedark text-[14px] p-3">
           Create <GrAddCircle />
         </Button>
-      </div>
+      </form>
 
       {/* labels */}
       <div className="w-full h-auto p-5">
