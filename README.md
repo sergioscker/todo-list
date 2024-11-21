@@ -23,8 +23,7 @@ Below is a list of the main dependencies used in the project:
 - **Next.js**: React framework for server-side rendering and static site generation.
 - **React and React DOM**: Library for building user interfaces.
 - **TailwindCSS**: Utility-first CSS framework for rapid styling.
-- **Radix UI**: Accessible components such as checkboxes and slots.
-- **Lucide React**: Configurable and optimized icons.
+- **React Icons**: Configurable and optimized icons.
 - **clsx** and **class-variance-authority**: Utilities for handling CSS class names.
 - **tailwind-merge**: A utility for merging TailwindCSS class names.
 - **tailwindcss-animate**: Predefined animations for TailwindCSS.
