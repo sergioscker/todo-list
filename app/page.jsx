@@ -18,9 +18,10 @@ export default function Home() {
   const { tasks, addTask, deleteTask, toggleTaskCompletion } = useTasks();
   const [newTask, setNewTask] = useState('');
 
-  const handleAddTasks = () => {
+  const handleAddTasks = (event) => {
     addTask(newTask);
     setNewTask('');
+    event.preventDefault();
   };
   return (
     <main className="w-full h-auto">

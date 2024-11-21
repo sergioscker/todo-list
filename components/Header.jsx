@@ -19,7 +19,7 @@ function Header({ tasks }) {
         <h1 className="text-[40px] text-blue font-bold text-center">
           {tasks && tasks.length > 0 ? (
             <>
-              To<span className="text-purple">do</span>
+              to<span className="text-purple">do</span>
             </>
           ) : (
             'Task Listing'
