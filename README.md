@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Todo List Application
 
-## Getting Started
+This repository contains a **Todo List** application built with **Next.js**, **React**, and **TailwindCSS**, leveraging modern libraries to ensure a rich and fluid user experience. The application is modular, accessible, and easy to customize.
 
-First, run the development server:
+---
+
+## Table of Contents
+
+- [Technologies Used](#technologies-used)
+- [Installation and Setup](#installation-and-setup)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Technologies Used
+
+Below is a list of the main dependencies used in the project:
+
+### **Production**
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **React and React DOM**: Library for building user interfaces.
+- **TailwindCSS**: Utility-first CSS framework for rapid styling.
+- **Radix UI**: Accessible components such as checkboxes and slots.
+- **Lucide React**: Configurable and optimized icons.
+- **clsx** and **class-variance-authority**: Utilities for handling CSS class names.
+- **tailwind-merge**: A utility for merging TailwindCSS class names.
+- **tailwindcss-animate**: Predefined animations for TailwindCSS.
+
+### **Development**
+- **ESLint**: Tool for code analysis and enforcement of coding standards.
+- **PostCSS**: CSS processing tool.
+
+---
+
+## Installation and Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/todo-list.git
+   cd todo-list
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+---
+
+## Available Scripts
+
+The `package.json` defines the following scripts:
+
+- **`dev`**: Starts the development server.
+- **`build`**: Builds the project for production.
+- **`start`**: Starts the production server.
+- **`lint`**: Runs the linter to identify code issues.
+
+Run any of these scripts using:
 
 ```bash
-npm run dev
+npm run <script>
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn <script>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project structure is organized as follows:
 
-## Learn More
+```
+.
+├── .next/            # Next.js build artifacts (cache, static files, etc.)
+├── app/              # New Next.js `app` directory for layouts and pages
+├── components/       # Reusable UI components
+├── hooks/            # Custom hooks
+├── lib/              # Utility modules and helper functions
+├── node_modules/     # Installed dependencies
+├── public/           # Static files (images, icons, etc.)
+├── styles/           # Global styles and TailwindCSS configurations
+├── .eslintrc.json    # ESLint configuration
+├── .gitignore        # Git ignored files
+├── .prettierrc.json  # Prettier configuration for code formatting
+├── components.json   # (Additional file, purpose unspecified)
+├── jsconfig.json     # Configuration for JavaScript paths and aliases
+├── next.config.mjs   # Next.js configuration
+├── package.json      # Dependencies and script definitions
+├── postcss.config.mjs# PostCSS configuration
+├── tailwind.config.js# TailwindCSS configuration
+├── yarn.lock         # Dependency lock file for Yarn
+```
 
-To learn more about Next.js, take a look at the following resources:
+This structure organizes files and folders in a modular way, keeping the project scalable and easy to navigate.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome! To contribute:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork the repository.
+2. Create a branch for your feature or fix: `git checkout -b my-feature`.
+3. Commit your changes: `git commit -m 'Add new feature'`.
+4. Push to the remote branch: `git push origin my-feature`.
+5. Open a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Built by [Sergio Oliveira](https://github.com/sergioscker). 🚀
